@@ -1,4 +1,5 @@
 import 'package:checkout_payment/core/utils/styles.dart';
+import 'package:checkout_payment/features/checkout/presentation/views/widgets/my_cart_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -11,6 +12,7 @@ class MyCartView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.transparent,
+        elevation: 0,
         leading: Center(child: SvgPicture.asset('assets/images/arrow.svg')),
         title: const Text(
 
@@ -19,6 +21,7 @@ class MyCartView extends StatelessWidget {
           style: FontStyles.fontStyle25,
         ),
       ),
+      body: const MyCartViewBody(),
     );
   }
 }
