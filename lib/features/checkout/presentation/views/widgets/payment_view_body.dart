@@ -8,14 +8,16 @@ class PaymentViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        SizedBox(
-          height: 32.0,
-        ),
-        PaymentMethodsListView(),
-        CustomCreditCard(),
-      ],
+    return const SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(
+            height: 32.0,
+          ),
+          PaymentMethodsListView(),
+          CustomCreditCard(),
+        ],
+      ),
     );
   }
 }
