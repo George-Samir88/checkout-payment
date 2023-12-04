@@ -11,20 +11,38 @@ class PaymentViewBody extends StatelessWidget {
         SizedBox(
           height: 32.0,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            PaymentMethodItem(
-              isActive: false,
-              imagePath: 'assets/images/credit.svg',
-            ),
-            PaymentMethodItem(
-              isActive: true,
-              imagePath: 'assets/images/paypal.svg',
-            ),
-          ],
-        ),
+        PaymentMethodsListView(),
       ],
+    );
+  }
+}
+
+class PaymentMethodsListView extends StatelessWidget {
+  const PaymentMethodsListView({super.key});
+
+  final List<String> imagesPaths = const [
+    'assets/images/credit.svg',
+    'assets/images/paypal.svg',
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 62.0,
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+            ),
+            child: PaymentMethodItem(
+              imagePath: imagesPaths[index],
+            ),
+          );
+        },
+        scrollDirection: Axis.horizontal,
+        itemCount: imagesPaths.length,
+      ),
     );
   }
 }
