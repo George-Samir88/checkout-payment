@@ -1,13 +1,20 @@
 import 'package:checkout_payment/features/checkout/presentation/views/widgets/payment_method_item.dart';
 import 'package:flutter/cupertino.dart';
 
-class PaymentMethodsListView extends StatelessWidget {
+class PaymentMethodsListView extends StatefulWidget {
   const PaymentMethodsListView({super.key});
 
+  @override
+  State<PaymentMethodsListView> createState() => _PaymentMethodsListViewState();
+}
+
+class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
   final List<String> imagesPaths = const [
     'assets/images/credit.svg',
     'assets/images/paypal.svg',
   ];
+
+  int activeIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +26,15 @@ class PaymentMethodsListView extends StatelessWidget {
             padding: const EdgeInsets.symmetric(
               horizontal: 16.0,
             ),
-            child: PaymentMethodItem(
-              imagePath: imagesPaths[index],
+            child: GestureDetector(
+              onTap: () {
+                activeIndex = index;
+                setState(() {});
+              },
+              child: PaymentMethodItem(
+                imagePath: imagesPaths[index],
+                isActive: activeIndex == index,
+              ),
             ),
           );
         },
