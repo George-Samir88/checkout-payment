@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 
 class CustomCreditCard extends StatefulWidget {
-  const CustomCreditCard({super.key, required this.formKey});
+  const CustomCreditCard({super.key, required this.formKey, required this.autoValidateMode});
 
   final GlobalKey<FormState> formKey;
+  final AutovalidateMode autoValidateMode ;
 
   @override
   State<CustomCreditCard> createState() => _CustomCreditCardState();
@@ -28,6 +29,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
           onCreditCardWidgetChange: (value) {},
         ),
         CreditCardForm(
+          autovalidateMode: widget.autoValidateMode,
             cardNumber: cardNumber,
             expiryDate: expiryDate,
             cardHolderName: cardHolderName,
