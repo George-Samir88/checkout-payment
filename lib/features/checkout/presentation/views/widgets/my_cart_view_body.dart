@@ -46,7 +46,7 @@ class MyCartViewBody extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => const PaymentDetailsView()));
-            },
+            }, text: 'Complete Payment',
           ),
           const SizedBox(
             height: 50.0,
