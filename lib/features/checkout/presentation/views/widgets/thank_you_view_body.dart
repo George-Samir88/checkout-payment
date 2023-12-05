@@ -14,6 +14,7 @@ class ThankYouViewBody extends StatelessWidget {
         left: 20,
       ),
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           Container(
             decoration: ShapeDecoration(
@@ -44,6 +45,29 @@ class ThankYouViewBody extends StatelessWidget {
               decoration: const ShapeDecoration(
                 color: Colors.white,
                 shape: OvalBorder(),
+              ),
+            ),
+          ),
+          const Positioned(
+            top: -50,
+            right: 0,
+            left: 0,
+            child: CircleAvatar(
+              backgroundColor: Color(0xFFD9D9D9),
+              radius: 50,
+            ),
+          ),
+          const Positioned(
+            top: -40,
+            right: 0,
+            left: 0,
+            child: CircleAvatar(
+              backgroundColor: Color(0xFF34A853),
+              radius: 40,
+              child: Icon(
+                Icons.check,
+                size: 50,
+                color: Colors.white,
               ),
             ),
           ),
