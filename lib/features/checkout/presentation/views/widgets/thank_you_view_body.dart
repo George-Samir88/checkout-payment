@@ -37,6 +37,7 @@ class ThankYouViewBody extends StatelessWidget {
             ),
           ),
           Positioned(
+            //padding to 0.5 radius of the circle
             right: -20,
             bottom: MediaQuery.sizeOf(context).height * 0.2,
             child: Container(
@@ -72,15 +73,15 @@ class ThankYouViewBody extends StatelessWidget {
             ),
           ),
           Positioned(
-            //padding to the same padding of circle + 0.5 radius
+            //vertical padding to the same padding of circle + 0.5 radius
             bottom: MediaQuery.sizeOf(context).height * 0.2 + 20,
-            //fixed width to row and padding 20 pixel to the same screen and 8 pixels to the internal container
+            //horizontal fixed width to row and padding 20 pixel to the same screen and 8 pixels to the internal container
             left: 28,
             right: 28,
             child: Row(
               children: List.generate(
                 20,
-                //expanded widget to add stable width
+                //expanded widget to add stable width to container
                 (index) => Expanded(
                   child: Container(
                     margin: const EdgeInsets.symmetric(horizontal: 2),
