@@ -26,7 +26,7 @@ abstract class FontStyles {
     color: Colors.black,
     fontSize: 20,
     fontFamily: 'Inter',
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w400,
     height: 0,
   );
   static const fontStyle24 = TextStyle(
