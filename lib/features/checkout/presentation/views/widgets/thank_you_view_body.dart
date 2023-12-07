@@ -1,4 +1,10 @@
+import 'package:checkout_payment/features/checkout/presentation/views/widgets/custom_oval_circle.dart';
+import 'package:checkout_payment/features/checkout/presentation/views/widgets/thank_view_card.dart';
 import 'package:flutter/material.dart';
+
+import 'custom_circle_check_container.dart';
+import 'custom_circle_container.dart';
+import 'custom_dashed_line.dart';
 
 //custom painter allowed
 class ThankYouViewBody extends StatelessWidget {
@@ -16,61 +22,29 @@ class ThankYouViewBody extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          Container(
-            decoration: ShapeDecoration(
-              color: const Color(0xFFD9D9D9),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
+          const ThankViewCard(),
           Positioned(
             left: -20,
             bottom: MediaQuery.sizeOf(context).height * 0.2,
-            child: Container(
-              width: 40,
-              height: 40,
-              decoration: const ShapeDecoration(
-                color: Colors.white,
-                shape: OvalBorder(),
-              ),
-            ),
+            child: const CustomOvalContainer(),
           ),
           Positioned(
             //padding to 0.5 radius of the circle
             right: -20,
             bottom: MediaQuery.sizeOf(context).height * 0.2,
-            child: Container(
-              width: 40,
-              height: 40,
-              decoration: const ShapeDecoration(
-                color: Colors.white,
-                shape: OvalBorder(),
-              ),
-            ),
+            child: const CustomOvalContainer(),
           ),
           const Positioned(
             top: -50,
             right: 0,
             left: 0,
-            child: CircleAvatar(
-              backgroundColor: Color(0xFFD9D9D9),
-              radius: 50,
-            ),
+            child: CustomCircleContainer(),
           ),
           const Positioned(
             top: -40,
             right: 0,
             left: 0,
-            child: CircleAvatar(
-              backgroundColor: Color(0xFF34A853),
-              radius: 40,
-              child: Icon(
-                Icons.check,
-                size: 50,
-                color: Colors.white,
-              ),
-            ),
+            child: CustomCircleCheckContainer(),
           ),
           Positioned(
             //vertical padding to the same padding of circle + 0.5 radius
@@ -78,21 +52,7 @@ class ThankYouViewBody extends StatelessWidget {
             //horizontal fixed width to row and padding 20 pixel to the same screen and 8 pixels to the internal container
             left: 28,
             right: 28,
-            child: Row(
-              children: List.generate(
-                20,
-                //expanded widget to add stable width to container
-                (index) => Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 2),
-                    height: 2,
-                    decoration: BoxDecoration(
-                        color: const Color(0xFFB7B7B7),
-                        borderRadius: BorderRadius.circular(16)),
-                  ),
-                ),
-              ),
-            ),
+            child: const CustomDashedLine(),
           ),
         ],
       ),
