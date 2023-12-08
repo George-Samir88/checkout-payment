@@ -8,7 +8,7 @@ class CustomCircleContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CircleAvatar(
-      backgroundColor: Color(0xFFD9D9D9),
+      backgroundColor: Color(0xFFEDEDED),
       radius: 50,
     );
   }

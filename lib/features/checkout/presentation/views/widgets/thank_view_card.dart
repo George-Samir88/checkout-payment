@@ -17,7 +17,7 @@ class ThankViewCard extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: ShapeDecoration(
-        color: const Color(0xFFD9D9D9),
+        color: const Color(0xFFEDEDED),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -75,7 +75,7 @@ class ThankViewCard extends StatelessWidget {
             value: r'$50.97',
           ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           const MasterCardItem(),
           const Spacer(),

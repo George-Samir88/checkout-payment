@@ -14,8 +14,7 @@ class ThankYouViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        top: 40,
-        bottom: 20,
+        top: 12,
         right: 20,
         left: 20,
       ),
