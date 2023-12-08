@@ -81,7 +81,8 @@ class ThankViewCard extends StatelessWidget {
           const Spacer(),
           const BarcodeAndPaidItem(),
           SizedBox(
-            height: (MediaQuery.sizeOf(context).height * 0.2 + 20) * 0.5 - 29,
+            height:
+                ((MediaQuery.sizeOf(context).height * 0.18 + 20) * 0.5) - 29,
           ),
         ],
       ),

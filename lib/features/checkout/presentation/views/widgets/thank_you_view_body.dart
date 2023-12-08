@@ -24,13 +24,13 @@ class ThankYouViewBody extends StatelessWidget {
           const ThankViewCard(),
           Positioned(
             left: -20,
-            bottom: MediaQuery.sizeOf(context).height * 0.2,
+            bottom: MediaQuery.sizeOf(context).height * 0.18,
             child: const CustomOvalContainer(),
           ),
           Positioned(
             //padding to 0.5 radius of the circle
             right: -20,
-            bottom: MediaQuery.sizeOf(context).height * 0.2,
+            bottom: MediaQuery.sizeOf(context).height * 0.18,
             child: const CustomOvalContainer(),
           ),
           const Positioned(
@@ -46,8 +46,8 @@ class ThankYouViewBody extends StatelessWidget {
             child: CustomCircleCheckContainer(),
           ),
           Positioned(
-            //vertical padding to the same padding of circle + 0.5 radius
-            bottom: MediaQuery.sizeOf(context).height * 0.2 + 20,
+            //vertical padding to the same padding of circle + radius (0.5 width)
+            bottom: MediaQuery.sizeOf(context).height * 0.18 + 20,
             //horizontal fixed width to row and padding 20 pixel to the same screen and 8 pixels to the internal container
             left: 28,
             right: 28,
