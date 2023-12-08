@@ -2,6 +2,7 @@ import 'package:checkout_payment/core/utils/styles.dart';
 import 'package:checkout_payment/features/checkout/presentation/views/widgets/total_price_item.dart';
 import 'package:flutter/material.dart';
 
+import 'barcode_and_paid_item.dart';
 import 'custom_payment_details_item.dart';
 import 'custom_separator_line.dart';
 import 'master_card_item.dart';
@@ -26,57 +27,62 @@ class ThankViewCard extends StatelessWidget {
         left: 22,
         right: 22,
       ),
-      child: const Column(
+      child: Column(
         children: [
-          Text(
+          const Text(
             'Thank you!',
             textAlign: TextAlign.center,
             style: FontStyles.fontStyle25,
           ),
-          SizedBox(
+          const SizedBox(
             height: 2,
           ),
-          Text(
+          const Text(
             'Your transaction was successful',
             textAlign: TextAlign.center,
             style: FontStyles.fontStyle20,
           ),
-          SizedBox(
+          const SizedBox(
             height: 42,
           ),
-          CustomPaymentDetailsItem(
+          const CustomPaymentDetailsItem(
             title: 'Date',
             value: '01/24/2023',
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          CustomPaymentDetailsItem(
+          const CustomPaymentDetailsItem(
             title: 'Time',
             value: '10:15 AM',
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          CustomPaymentDetailsItem(
+          const CustomPaymentDetailsItem(
             title: 'To',
             value: 'Sam Louis',
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          CustomSeparatorLine(),
-          SizedBox(
+          const CustomSeparatorLine(),
+          const SizedBox(
             height: 24,
           ),
-          TotalPriceItem(
+          const TotalPriceItem(
             title: 'Total',
             value: r'$50.97',
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          MasterCardItem(),
+          const MasterCardItem(),
+          const Spacer(),
+          const BarcodeAndPaidItem(),
+          SizedBox(
+            height: (MediaQuery.sizeOf(context).height * 0.2 + 20) * 0.5 - 29,
+          ),
         ],
       ),
     );
