@@ -39,6 +39,7 @@ dependencies:
   flutter_credit_card: ^4.0.0+1
   flutter_stripe: ^9.4.0
   dio: ^5.4.0
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
