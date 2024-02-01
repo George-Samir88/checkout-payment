@@ -1,3 +1,4 @@
+import 'package:checkout_payment/features/checkout/data/models/payment_intent_object_input/payment_intent_object_input.dart';
 import 'package:checkout_payment/features/checkout/presentation/manager/payment_cubit.dart';
 import 'package:checkout_payment/features/checkout/presentation/manager/payment_state.dart';
 import 'package:checkout_payment/features/checkout/presentation/views/thank_you_view.dart';
@@ -26,6 +27,12 @@ class CustomButtonBlocConsumer extends StatelessWidget {
       },
       builder: (context, state) {
         return CustomButton(
+          onTap: () {
+            PaymentIntentObjectInput paymentIntentObjectInput =
+                PaymentIntentObjectInput(amount: '100', currency: 'USD');
+            BlocProvider.of<PaymentCubit>(context).makePayment(
+                paymentIntentObjectInput: paymentIntentObjectInput);
+          },
           text: 'Continue',
           isLoading: state is PaymentLoading ? true : false,
         );
