@@ -27,7 +27,7 @@ class StripeService {
     return customer;
   }
 
-  //customer ephemeral key uses customerId retrieve cards of customer
+  //customer ephemeral key uses customerId to retrieve cards of customer
   Future<CustomerEphemeralKey> createEphemeralKey(
       {required String customerId}) async {
     var response = await apiService.post(
@@ -77,17 +77,22 @@ class StripeService {
 
   Future integratePaymentProcessSteps(
       {required PaymentIntentObjectInput paymentIntentObjectInput}) async {
+    //trigger createPaymentIntent request to receive response(payment intent object)
     PaymentIntentObject paymentIntentObject = await createPaymentIntent(
         paymentIntentObjectInput: paymentIntentObjectInput);
+    //trigger createEphemeralKey request to receive response(customer Ephemeral Key)
     CustomerEphemeralKey customerEphemeralKey = await createEphemeralKey(
         customerId: paymentIntentObjectInput.customerId);
+    //create initPaymentSheetInputModel model to pass it to initPaymentSheet method
     InitPaymentSheetInputModel initPaymentSheetInputModel =
         InitPaymentSheetInputModel(
             paymentIntentClientSecret: paymentIntentObject.clientSecret!,
             customerEphemeralKeySecret: customerEphemeralKey.secret!,
             customerId: paymentIntentObjectInput.customerId);
+    //trigger initPaymentSheet method
     await initPaymentSheet(
         initPaymentSheetInputModel: initPaymentSheetInputModel);
+    //trigger presentPaymentSheet method
     await presentPaymentSheet();
   }
 }
