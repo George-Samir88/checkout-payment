@@ -31,6 +31,7 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           onTap: () {
             PaymentIntentObjectInput paymentIntentObjectInput =
                 PaymentIntentObjectInput(
+                    // ignore: prefer_adjacent_string_concatenation
                     amount: '100' + '00',
                     currency: 'USD',
                     customerId: 'cus_PV6yJXptOWfzrw');
