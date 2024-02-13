@@ -17,3 +17,7 @@ git push -f origin main
 2)git config user.email "xxxxxxx@hotmail.com"
 3)git config user.name "xxxxxxx"
 */
+/*
+-------------personal account in paypal is used for sending money----------------
+-------------business account receive money----------------------
+*/
