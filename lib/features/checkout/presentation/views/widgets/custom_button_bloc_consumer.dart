@@ -10,6 +10,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
+import '../../../data/models/amount_model/amount_model.dart';
+import '../../../data/models/amount_model/details.dart';
+import '../../../data/models/item_list_model/item.dart';
+import '../../../data/models/item_list_model/item_list.dart';
 
 class CustomButtonBlocConsumer extends StatelessWidget {
   const CustomButtonBlocConsumer({
@@ -43,39 +47,40 @@ class CustomButtonBlocConsumer extends StatelessWidget {
             BlocProvider.of<PaymentCubit>(context).makePayment(
                 paymentIntentObjectInput: paymentIntentObjectInput);*/
             //code for paypal payment
+            //amount object
+            AmountModel amountModel = AmountModel(
+              total: "100",
+              currency: "USD",
+              details:
+                  Details(subtotal: "100", shipping: "0", shippingDiscount: 0),
+            );
+            //item list object
+            ItemList itemList = ItemList(
+              items: [
+                Item(
+                  name: "Apple",
+                  quantity: 4,
+                  price: "10",
+                  currency: "USD",
+                ),
+                Item(
+                  name: "Pineapple",
+                  quantity: 5,
+                  price: "12",
+                  currency: "USD",
+                ),
+              ],
+            );
             Navigator.of(context).push(MaterialPageRoute(
               builder: (BuildContext context) => PaypalCheckoutView(
                 sandboxMode: true,
                 clientId: "YOUR CLIENT ID",
                 secretKey: "YOUR SECRET KEY",
-                transactions: const [
+                transactions: [
                   {
-                    "amount": {
-                      "total": "100",
-                      "currency": "USD",
-                      "details": {
-                        "subtotal": "100",
-                        "shipping": "0",
-                        "shipping_discount": 0
-                      }
-                    },
+                    "amount": amountModel.toJson(),
                     "description": "The payment transaction description.",
-                    "item_list": {
-                      "items": [
-                        {
-                          "name": "Apple",
-                          "quantity": 4,
-                          "price": "10",
-                          "currency": "USD"
-                        },
-                        {
-                          "name": "Pineapple",
-                          "quantity": 5,
-                          "price": "12",
-                          "currency": "USD"
-                        }
-                      ],
-                    }
+                    "item_list": itemList.toJson()
                   }
                 ],
                 note: "Contact us for any questions on your order.",

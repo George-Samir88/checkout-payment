@@ -1,9 +1,9 @@
 import 'item.dart';
 
 class ItemList {
-  List<Item>? items;
+  final List<Item>? items;
 
-  ItemList({this.items});
+  ItemList({required this.items});
 
   factory ItemList.fromJson(Map<String, dynamic> json) => ItemList(
         items: (json['items'] as List<dynamic>?)
