@@ -6,15 +6,11 @@
 3)presentPaymentSheet()
 */
 
-
-
 /*
 -------------delete pushed changes-------------
 git reset HEAD~1        //1 is the last change ,2 is the last 2 changes
 git push -f origin main
 */
-
-
 
 /*-----------for adding the same project repo on another enviornment-------------
 1)git clone https://github.com/xxxxxxx/personal_finance.git
