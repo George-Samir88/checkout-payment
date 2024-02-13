@@ -1,8 +1,8 @@
 /*
 --------------flow of payment----------
 1)paymentIntentObject = create paymentIntent (amount , currency , customerId)
-2)keySecret createEphemeralKey(stripeVersion , customerId)
-2)init paymentSheet(merchantName , paymentClientSecretKey , ephemeralKeySecret)
+2)keySecret createEphemeralKey( customerId)
+2)init paymentSheet(merchantName , paymentClientSecretKey , ephemeralKeySecret , customer id)
 3)presentPaymentSheet()
 */
 
