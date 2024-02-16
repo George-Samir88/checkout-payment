@@ -16,6 +16,8 @@ git push -f origin main
 1)git clone https://github.com/xxxxxxx/personal_finance.git
 2)git config user.email "xxxxxxx@hotmail.com"
 3)git config user.name "xxxxxxx"
+4)git fetch
+5)git pull
 */
 /*
 -------------personal account in paypal is used for sending money----------------
